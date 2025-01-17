@@ -1,9 +1,10 @@
-const {filtrarPorEspecialidad} = require ('./datos-filter')
-const {usersData} =require ('./datos.js');
 
 const express = require('express');
 const app = express();
+const PORT = 3000
 
+const {filtrarPorEspecialidad} = require ('./datos-filter')
+const {usersData} =require ('./datos.js');
 
 app.get('/', (req, res) => {    
     res.send(`
@@ -169,7 +170,7 @@ app.get('/marketing', (req, res) => {
   res.status(404).send('<h1>Pagina no encontrada</h1><a href="/">Home</a>');
 });
   
-  app.listen(3000, () => {
-    console.log(`Node.js está escuchando en el puerto http://localhost:3000`);
+  app.listen(PORT, () => {
+    console.log(`Node.js está escuchando en el puerto http://localhost:${PORT}`);
   });
   
